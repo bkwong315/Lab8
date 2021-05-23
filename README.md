@@ -15,10 +15,21 @@
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
    1. ```JavaScript
+         // Code that uses page.goto inside the beforeEach
          beforeAll(async () => {
             beforeEach(async () => {
             await page.goto('http://127.0.0.1:5500');
             await page.click('header img');
           })
        });
+       
+   1. ```JavaScript
+         // Code that doesn't use page.goto inside the beforeEach
+         beforeAll(async () => {
+            await page.goto('http://127.0.0.1:5500');
+            beforeEach(async () => {
+            await page.click('header img');
+          })
+       });
       ```
+      
