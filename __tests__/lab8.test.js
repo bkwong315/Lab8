@@ -189,6 +189,6 @@ describe('Basic user flow for SPA ', () => {
 
     let url = await page.url();
 
-    expect(url).toBe('http://127.0.0.1:5500/');
+    expect(url).toBe('http://127.0.0.1:5500/#entry4');
   })
 });
